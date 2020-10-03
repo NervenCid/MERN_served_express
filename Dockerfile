@@ -29,7 +29,7 @@ WORKDIR /app/frontend
 COPY frontend/ ./
 
 #Instalamos las dependencias
-RUN sudo npm install
+RUN npm install
 
 #Compilamos el proyecto de 'React' esto crea una carpeta 'build'
 RUN npm run build
@@ -55,7 +55,7 @@ WORKDIR /app/backend
 COPY backend/ ./
 
 #Instalamos las dependencias
-RUN sudo npm install
+RUN npm install
 
 #Ejecutamos el servidor
-CMD ["npm", "run", "start"]
+CMD ["sudo", "npm", "run", "start"]
