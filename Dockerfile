@@ -58,4 +58,4 @@ COPY backend/ ./
 RUN npm install
 
 #Ejecutamos el servidor
-CMD ["sudo", "npm", "run", "start"]
+CMD ["npm", "run", "start"]
