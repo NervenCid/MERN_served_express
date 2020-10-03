@@ -9,8 +9,9 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 //Creamos una 'URL' verificar primero
 //Verificar el puerto del servidor en este caso se esta usando el puerto 4000
-const URL = 'http://localhost:4000';
-//const URL = 'http://ec2-34-212-168-1.us-west-2.compute.amazonaws.com:4000';
+//const URL = 'http://localhost:4000';
+const URL = process.env.MONGODB_URI ? process.env.BACKEND_URI : 'http://localhost:4000';
+console.log('URL: ', URL);
 
 //Creamos y exportamos el componente
 export default class CreateNote extends Component {
