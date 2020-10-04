@@ -31,6 +31,9 @@ COPY frontend/ ./
 #Instalamos las dependencias
 RUN npm install
 
+#Copiamos todos los archivos al contenedor
+COPY . ./
+
 #Compilamos el proyecto de 'React' esto crea una carpeta 'build'
 RUN npm run build
 
