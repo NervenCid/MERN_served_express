@@ -8,7 +8,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 //Importamos 'bootswatch'
 import 'bootswatch/dist/spacelab/bootstrap.min.css';
 //Importamos el estilo css
-import './App.css';
+//import './App.css';
 //Importamos los componentes
 import Navigation from './components/Navigation';
 import NoteList from './components/NotesList';
