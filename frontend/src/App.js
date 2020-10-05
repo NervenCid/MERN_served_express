@@ -4,7 +4,9 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 //Importamos 'booststrap' asegurarse que este instalado en 
 //la carpeta'node-modules' del proyecto
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+//Importamos 'bootswatch'
+import 'bootswatch/dist/lux/bootstrap.min.css';
 //Importamos el estilo css
 import './App.css';
 //Importamos los componentes
