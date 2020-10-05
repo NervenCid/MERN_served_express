@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 //la carpeta'node-modules' del proyecto
 //import 'bootstrap/dist/css/bootstrap.min.css';
 //Importamos 'bootswatch'
-import 'bootswatch/dist/lux/bootstrap.min.css';
+import 'bootswatch/dist/darkly/bootstrap.min.css';
 //Importamos el estilo css
 //import './App.css';
 //Importamos los componentes
