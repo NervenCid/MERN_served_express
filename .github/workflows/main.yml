@@ -32,9 +32,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           cd backend/
-          pwd
-          echo ${{ secrets.MONGODB_URI }} >> .env
-          cat .env
+          echo "Aqui toy" >> Saludo.txt
+          cat Saludo.txt
           cd ..
           pwd
           # echo ${{ secrets.REACT_APP_API }} >> frontend/.env
