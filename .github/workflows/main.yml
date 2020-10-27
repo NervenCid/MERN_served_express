@@ -34,6 +34,7 @@ jobs:
           cd backend/
           pwd
           echo ${{ secrets.MONGODB_URI }} >> .env
+          cat .env
           cd ..
           pwd
           # echo ${{ secrets.REACT_APP_API }} >> frontend/.env
