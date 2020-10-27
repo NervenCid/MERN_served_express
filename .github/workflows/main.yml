@@ -32,6 +32,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           cd backend/
+          pwd
           echo ${{ secrets.MONGODB_URI }} >> .env
           cd ..
           pwd
