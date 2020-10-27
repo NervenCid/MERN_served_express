@@ -31,5 +31,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo ${{ secrets.MONGODB_URI }} >> backend/.env
-          echo ${{ secrets.REACT_APP_API }} >> frontend/.env
+          cd backend/
+          echo ${{ secrets.MONGODB_URI }} >> .env
+          cd ..
+          pwd
+          # echo ${{ secrets.REACT_APP_API }} >> frontend/.env
