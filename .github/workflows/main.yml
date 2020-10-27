@@ -32,7 +32,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           cd backend/
-          echo "$ {{ secrets.MONGODB_URI }} " >> Saludo.txt
+          echo $ {{ secrets.MONGODB_URI }} >> Saludo.txt
           cat Saludo.txt
           cd ..
           pwd
