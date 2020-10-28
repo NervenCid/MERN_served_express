@@ -39,3 +39,4 @@ jobs:
           echo test, and deploy your project.
           rm -rf backend/.env || true
           echo ${{ secrets.REACT_APP_API }} >> frontend/.env
+          cat frontend/.env
