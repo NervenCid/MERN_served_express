@@ -29,7 +29,7 @@ jobs:
       # Create a .env file with the secret in the backend
       - name: Create env file into the backend
         run: |
-          rm -rf backend/.env || true
+          # rm -rf backend/.env || true
           echo MONGODB_URI=${{ secrets.MONGODB_URI }} >> backend/.env
 
       # Runs a set of commands using the runners shell
@@ -37,5 +37,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          pwd
+          rm -rf backend/.env || true
           echo ${{ secrets.REACT_APP_API }} >> frontend/.env
