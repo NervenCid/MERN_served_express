@@ -31,7 +31,7 @@ jobs:
         run: |
           rm -rf backend/.env || true
           echo "Hola" >> backend/.env
-          cat backend/Saludo.txt
+          cat backend/.env
           
       # Create a .env file with the secret in the frontend
       - name: Create env file into the frontend
