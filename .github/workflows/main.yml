@@ -50,5 +50,5 @@ jobs:
           docker rm -f $(docker ps -qa) || true
           docker rmi $(docker images -q) || true      
           docker build -t mern .
-          docker run --publish -d 4000:4000 mern
+          docker run -d --publish 4000:4000 mern
           
