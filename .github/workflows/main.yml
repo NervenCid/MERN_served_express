@@ -30,7 +30,7 @@ jobs:
       - name: Create env file into the backend
         run: |
           rm -rf backend/.env || true
-          echo "Hola" >> backend/.env
+          echo MONGODB_URI= >> backend/.env
           cat backend/.env
           
       # Create a .env file with the secret in the frontend
