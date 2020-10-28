@@ -36,8 +36,8 @@ jobs:
       # Create a .env file with the secret in the frontend
       - name: Create env file into the frontend
         run: |
-          rm -rf backend/.env || true
-          echo REACT_APP_API=${{ secrets.REACT_APP_API }} >> backend/.env
+          rm -rf frontend/.env || true
+          echo REACT_APP_API=${{ secrets.REACT_APP_API }} >> frontend/.env
           cat frontend/.env
 
       # Runs a set of commands using the runners shell
