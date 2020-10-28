@@ -45,10 +45,10 @@ jobs:
           cat frontend/.env
           
       # Build and run the docker image
-      - name: Build docker image
+      - name: Build and deploy docker image
         run: |
           docker rm -f $(docker ps -qa) || true
           docker rmi $(docker images -q) || true      
           docker build -t mern .
-          docker run -it --publish 4000:4000 mern
+          docker run --publish 4000:4000 mern
           
