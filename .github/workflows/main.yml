@@ -43,9 +43,12 @@ jobs:
           rm -rf frontend/.env || true
           echo REACT_APP_API=$REACT_APP_API >> frontend/.env
           cat frontend/.env
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+          
+      # Build and run the docker image
+      - name: Build docker image
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          docker rm -f $(docker ps -qa) || true
+          docker rmi $(docker images -q) || true      
+          docker build -t mern .
+          docker run -it --publish 4000:4000 mern
+          
