@@ -1,0 +1,54 @@
+# This is a basic workflow to help you get started with Actions
+
+name: nervencid-mern
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, my-aws]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+      # Create a .env file with the secret in the backend
+      - name: Create env file into the backend
+        env: 
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: |
+          rm -rf backend/.env || true
+          echo MONGODB_URI=$MONGODB_URI >> backend/.env
+          cat backend/.env
+          
+      # Create a .env file with the secret in the frontend
+      - name: Create env file into the frontend
+        env: 
+          REACT_APP_API: ${{ secrets.REACT_APP_API }}
+        run: |
+          rm -rf frontend/.env || true
+          echo REACT_APP_API=$REACT_APP_API >> frontend/.env
+          cat frontend/.env
+          
+      # Build and run the docker image
+      - name: Build and deploy docker image
+        run: |
+          docker rm -f $(docker ps -qa) || true
+          docker rmi $(docker images -q) || true      
+          docker build -t mern .
+          docker run -d --publish 4000:4000 mern
+          
