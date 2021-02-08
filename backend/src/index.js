@@ -13,7 +13,7 @@ require('./database');
 async function main(){
     //Iniciamos el servidor
     await app.listen(app.get('port'));
-    console.log('Servidor corriendo del putas');
+    console.log('Servidor corriendo del putas en el puerto: ', app.get('port'));
 };
 
 
