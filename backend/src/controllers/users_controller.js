@@ -3,7 +3,7 @@
 //Almacenamos en un objeto todas las funciones relacionadas con 'users'
 const userCtrl = {};
 
-//Importamos el modelos de datos desde 'models/Note.js'
+//Importamos el modelos de datos desde 'models/User.js'
 const User = require('../models/User');
 
 //Metodo get
