@@ -12,7 +12,7 @@ require('./database');
 //Creamos una funcion principal
 async function main(){
     //Iniciamos el servidor
-    await app.listen(app.get('port'));
+    await app.listen(app.get('port'), '0.0.0.0');
     console.log('Servidor corriendo del putas en el puerto: ', app.get('port'));
 };
 
